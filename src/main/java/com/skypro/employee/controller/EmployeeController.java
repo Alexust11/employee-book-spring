@@ -41,4 +41,8 @@ public class EmployeeController {
     public String getMaxSalaryEmployee() {
         return this.employeeService.getMaxSalary();
     }
+    @GetMapping("/employees/salary/sred")
+    public Employee  getEmployeesSred() {
+        return this.employeeService.getEmployeesSred();
+    }
 }
