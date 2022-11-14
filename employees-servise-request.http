@@ -1,6 +1,6 @@
 
 GET http://localhost:8080/employees
-###
+### Ввод первого сотрудника
 POST http://localhost:8080/employees
 Content-Type: application/json
 
@@ -9,7 +9,7 @@ Content-Type: application/json
 "departament": 1,
   "salary": 1000
 }
-###
+### Ввод второго сотрудника
 POST http://localhost:8080/employees
 Content-Type: application/json
 
@@ -18,3 +18,10 @@ Content-Type: application/json
   "departament": 2,
   "salary": 3000
 }
+### Вывод суммы зарплаты
+GET http://localhost:8080/employees/salary/sum
+### Вывод сотрудника с минимальной зп
+GET http://localhost:8080/employees/salary/min
+
+### Вывод сотрудника с максимальной зп
+GET http://localhost:8080/employees/salary/max
