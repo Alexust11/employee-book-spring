@@ -25,5 +25,8 @@ GET http://localhost:8080/employees/salary/min
 
 ### Вывод сотрудника с максимальной зп
 GET http://localhost:8080/employees/salary/max
-### Сотрудники у которых з/п больше средней
+### Сотрудники (только фамилии)у которых з/п больше средней
 GET http://localhost:8080/employees/salary/sred
+
+### Сотрудники (полностью объект)у которых з/п больше средней
+GET http://localhost:8080/employees/salary/sre1

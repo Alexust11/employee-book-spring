@@ -39,11 +39,15 @@ public class EmployeeService {
         return employees.values().stream().max(Comparator.comparingInt(Employee::getSalary)).get().getSurName();
     }
 
-    public Employee  getEmployeesSred() {
-         double sr=employees.values().stream().mapToInt(Employee->Employee.getSalary()).average().getAsDouble();
-         List<Employee> list=new ArrayList<>(employees.values().stream().filter(x->x.getSalary()>sr).collect(Collectors.toList()));
+    public List<String>  getEmployeesSred() {
+         double sr=employees.values().stream().mapToInt(Employee->Employee.getSalary()).average().orElse(0);
+          return  employees.values().stream().filter(x->x.getSalary()>sr).map(x->x.getSurName()).collect(Collectors.toList());
 
-        return (Employee) list;
+    }
+
+    public List<Employee> getEmployeesSred1() {
+        double sr=employees.values().stream().mapToInt(Employee->Employee.getSalary()).average().orElse(0);
+        return employees.values().stream().filter(x->x.getSalary()>sr).collect(Collectors.toList());
 
     }
 }
