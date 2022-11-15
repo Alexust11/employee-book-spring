@@ -31,12 +31,12 @@ public class EmployeeService {
         return employees.values().stream().mapToInt(Employee::getSalary).sum();
     }
 
-    public String getMinSalary() {
-        return employees.values().stream().min(Comparator.comparingInt(Employee::getSalary)).get().getSurName();
+    public Employee getMinSalary() {
+        return employees.values().stream().min(Comparator.comparingInt(Employee::getSalary)).get();
     }
 
-    public String getMaxSalary() {
-        return employees.values().stream().max(Comparator.comparingInt(Employee::getSalary)).get().getSurName();
+    public Employee getMaxSalary() {
+        return employees.values().stream().max(Comparator.comparingInt(Employee::getSalary)).get();
     }
 
     public List<String>  getEmployeesSred() {
