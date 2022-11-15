@@ -1,7 +1,7 @@
 
-GET http://localhost:8080/employees
+GET http://localhost:8080/employees/get
 ### Ввод первого сотрудника
-POST http://localhost:8080/employees
+POST http://localhost:8080/employees/add
 Content-Type: application/json
 
 {"name":"TestName",
@@ -10,10 +10,10 @@ Content-Type: application/json
   "salary": 1000
 }
 ### Ввод второго сотрудника
-POST http://localhost:8080/employees
+POST http://localhost:8080/employees/add
 Content-Type: application/json
 
-{"name":"TestName2",
+{
   "surName":"surNameTest2",
   "departament": 2,
   "salary": 3000

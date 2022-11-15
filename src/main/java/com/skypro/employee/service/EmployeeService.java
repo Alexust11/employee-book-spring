@@ -2,7 +2,9 @@ package com.skypro.employee.service;
 
 import com.skypro.employee.model.Employee;
 import com.skypro.employee.record.EmployeeRequest;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -18,7 +20,10 @@ public class EmployeeService {
     }
 
     public Employee addEmployee(EmployeeRequest employeeRequest) {
-        if (employeeRequest.getName() == null || employeeRequest.getSurName() == null) {
+//        if (employeeRequest.getName() == null || employeeRequest.getSurName() == null) {
+//            throw new IllegalArgumentException("Не ввели имя или фамилию");
+//        }
+        if (StringUtils.isBlank(employeeRequest.getName())) {
             throw new IllegalArgumentException("Не ввели имя или фамилию");
         }
         Employee employee=new Employee(employeeRequest.getName(), employeeRequest.getSurName(), employeeRequest.getDepartament(),employeeRequest.getSalary());

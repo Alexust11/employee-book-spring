@@ -3,10 +3,8 @@ package com.skypro.employee.controller;
 import com.skypro.employee.model.Employee;
 import com.skypro.employee.record.EmployeeRequest;
 import com.skypro.employee.service.EmployeeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.Collection;
 import java.util.List;
@@ -19,12 +17,12 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping("/employees")
+    @GetMapping("/employees/get")
     public Collection<Employee> getAllEmployees() {
         return this.employeeService.getAllEmployees();
     }
 
-    @PostMapping("/employees")
+    @PostMapping("/employees/add")
     public Employee creatEmployee(@RequestBody EmployeeRequest employeeRequest) {
         return this.employeeService.addEmployee(employeeRequest);
     }
