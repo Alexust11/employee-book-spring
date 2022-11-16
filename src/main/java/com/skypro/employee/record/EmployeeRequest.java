@@ -1,5 +1,7 @@
 package com.skypro.employee.record;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class EmployeeRequest {
     private  String name;
     private  String surName;
@@ -7,6 +9,7 @@ public class EmployeeRequest {
     private  int salary;
 
     public String getName() {
+
         return name;
     }
 
