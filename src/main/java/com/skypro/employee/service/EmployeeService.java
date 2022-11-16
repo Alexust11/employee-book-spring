@@ -44,11 +44,11 @@ public class EmployeeService {
     }
 
     public Employee getMinSalary() {
-        return employees.values().stream().min(Comparator.comparingInt(Employee::getSalary)).get();
+        return employees.values().stream().min(Comparator.comparingInt(Employee::getSalary)).orElse(null);
     }
 
     public Employee getMaxSalary() {
-        return employees.values().stream().max(Comparator.comparingInt(Employee::getSalary)).get();
+        return employees.values().stream().max(Comparator.comparingInt(Employee::getSalary)).orElse(null);
     }
 
     public List<String>  getEmployeesSred() {
