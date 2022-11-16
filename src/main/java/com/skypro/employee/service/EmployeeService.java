@@ -23,10 +23,17 @@ public class EmployeeService {
 //        if (employeeRequest.getName() == null || employeeRequest.getSurName() == null) {
 //            throw new IllegalArgumentException("Не ввели имя или фамилию");
 //        }
-        if (StringUtils.isBlank(employeeRequest.getName())) {
+        if (StringUtils.isBlank(employeeRequest.getName())||StringUtils.isBlank(employeeRequest.getSurName())) {
             throw new IllegalArgumentException("Не ввели имя или фамилию");
         }
-        Employee employee=new Employee(employeeRequest.getName(), employeeRequest.getSurName(), employeeRequest.getDepartament(),employeeRequest.getSalary());
+        if (StringUtils.containsAny(employeeRequest.getName(), '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$','%','^','&','*','(',')','-')) {// остальные неохота писать
+            throw new IllegalArgumentException("Недопустимые символы в имени");
+        }
+        if (StringUtils.containsAny(employeeRequest.getSurName(), '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$','%','^','&','*','(',')','-')) {
+            throw new IllegalArgumentException("Недопустимые символы в имени");
+        }
+
+        Employee employee=new Employee(StringUtils.capitalize(employeeRequest.getName()), StringUtils.capitalize(employeeRequest.getSurName()), employeeRequest.getDepartament(),employeeRequest.getSalary());
         this.employees.put(employee.getId(), employee);
         return employee;
     }

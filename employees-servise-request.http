@@ -4,8 +4,8 @@ GET http://localhost:8080/employees/get
 POST http://localhost:8080/employees/add
 Content-Type: application/json
 
-{"name":"TestName",
- "surName":"surNameTest",
+{"name":"estName",
+ "surName":"ввп",
 "departament": 1,
   "salary": 1000
 }
@@ -13,8 +13,8 @@ Content-Type: application/json
 POST http://localhost:8080/employees/add
 Content-Type: application/json
 
-{
-  "surName":"surNameTest2",
+{ "name": "dfy",
+  "surName":"surNameTest",
   "departament": 2,
   "salary": 3000
 }
